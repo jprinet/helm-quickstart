@@ -260,8 +260,8 @@
         <profile>
             <id>LOCAL</id>
             <properties>
-                <quarkus.config-tracking.file-suffix>-foo-bar</quarkus.config-tracking.file-suffix>
-                <quarkus.recorded-build-config.file>quarkus-prod-foo-bar</quarkus.recorded-build-config.file>
+<!--                <quarkus.config-tracking.file-suffix>-foo-bar</quarkus.config-tracking.file-suffix>-->
+<!--                <quarkus.recorded-build-config.file>quarkus-prod-foo-bar</quarkus.recorded-build-config.file>-->
                 <develocity.quarkus.dump.config.suffix>foo-bar</develocity.quarkus.dump.config.suffix>
                 <quarkus.package.jar.type>uber-jar</quarkus.package.jar.type>
 
