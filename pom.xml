@@ -268,6 +268,28 @@
                 <develocity.quarkus.config.dump.folder>local</develocity.quarkus.config.dump.folder>
             </properties>
         </profile>
+
+        <profile>
+            <id>custom-suffix</id>
+            <properties>
+                <quarkus.config-tracking.file-suffix>-foo-bar</quarkus.config-tracking.file-suffix>
+                <quarkus.recorded-build-config.file>quarkus-prod-foo-bar</quarkus.recorded-build-config.file>
+                <develocity.quarkus.dump.config.suffix>foo-bar</develocity.quarkus.dump.config.suffix>
+                <quarkus.package.jar.type>uber-jar</quarkus.package.jar.type>
+
+                <develocity.quarkus.config.dump.folder>local</develocity.quarkus.config.dump.folder>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>default-suffix</id>
+            <properties>
+                <develocity.quarkus.dump.config.suffix>foo-bar</develocity.quarkus.dump.config.suffix>
+                <quarkus.package.jar.type>uber-jar</quarkus.package.jar.type>
+
+                <develocity.quarkus.config.dump.folder>local</develocity.quarkus.config.dump.folder>
+            </properties>
+        </profile>
     </profiles>
 
 </project>
