@@ -12,8 +12,9 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
-<!--        <quarkus.platform.version>3.8.6</quarkus.platform.version>-->
-        <quarkus.platform.version>3.13.0</quarkus.platform.version>
+        <quarkus.platform.version>3.8.6</quarkus.platform.version>
+<!--        <quarkus.platform.version>3.13.0</quarkus.platform.version>-->
+<!--        <quarkus.platform.version>3.19.2</quarkus.platform.version>-->
         <skipITs>true</skipITs>
         <surefire-plugin.version>3.0.0</surefire-plugin.version>
 
@@ -51,11 +52,11 @@
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-arc</artifactId>
         </dependency>
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-rest</artifactId>
-<!--            <version>3.19.2</version>-->
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.quarkus</groupId>-->
+<!--            <artifactId>quarkus-rest</artifactId>-->
+<!--&lt;!&ndash;            <version>3.19.2</version>&ndash;&gt;-->
+<!--        </dependency>-->
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-junit5</artifactId>
@@ -104,30 +105,6 @@
             </plugins>
         </pluginManagement>
         <plugins>
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-resources-plugin</artifactId>-->
-<!--                <version>3.3.1</version>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <id>copy-quarkus-configuration-dump</id>-->
-<!--                        <phase>generate-sources</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>copy-resources</goal>-->
-<!--                        </goals>-->
-<!--                        <configuration>-->
-<!--                            <overwrite>true</overwrite>-->
-<!--                            <outputDirectory>${basedir}/.quarkus</outputDirectory>-->
-<!--                            <resources>-->
-<!--                                <resource>-->
-<!--                                    <directory>${basedir}/.quarkus/${develocity.quarkus.config.dump.folder}</directory>-->
-<!--                                </resource>-->
-<!--                            </resources>-->
-<!--                        </configuration>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
-
             <plugin>
                 <groupId>${quarkus.platform.group-id}</groupId>
                 <artifactId>quarkus-maven-plugin</artifactId>
@@ -252,42 +229,9 @@
             </properties>
         </profile>
         <profile>
-            <id>CI</id>
-            <properties>
-                <develocity.quarkus.config.dump.folder>ci</develocity.quarkus.config.dump.folder>
-            </properties>
-        </profile>
-        <profile>
-            <id>LOCAL</id>
-            <properties>
-                <quarkus.config-tracking.file-suffix>-foo-bar</quarkus.config-tracking.file-suffix>
-                <quarkus.recorded-build-config.file>quarkus-prod-foo-bar</quarkus.recorded-build-config.file>
-                <develocity.quarkus.dump.config.suffix>foo-bar</develocity.quarkus.dump.config.suffix>
-                <quarkus.package.jar.type>uber-jar</quarkus.package.jar.type>
-
-                <develocity.quarkus.config.dump.folder>local</develocity.quarkus.config.dump.folder>
-            </properties>
-        </profile>
-
-        <profile>
             <id>custom-suffix</id>
             <properties>
                 <quarkus.config-tracking.file-suffix>-foo-bar</quarkus.config-tracking.file-suffix>
-                <quarkus.recorded-build-config.file>quarkus-prod-foo-bar</quarkus.recorded-build-config.file>
-                <develocity.quarkus.dump.config.suffix>foo-bar</develocity.quarkus.dump.config.suffix>
-                <quarkus.package.jar.type>uber-jar</quarkus.package.jar.type>
-
-                <develocity.quarkus.config.dump.folder>local</develocity.quarkus.config.dump.folder>
-            </properties>
-        </profile>
-
-        <profile>
-            <id>default-suffix</id>
-            <properties>
-                <develocity.quarkus.dump.config.suffix>foo-bar</develocity.quarkus.dump.config.suffix>
-                <quarkus.package.jar.type>uber-jar</quarkus.package.jar.type>
-
-                <develocity.quarkus.config.dump.folder>local</develocity.quarkus.config.dump.folder>
             </properties>
         </profile>
     </profiles>
